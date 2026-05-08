@@ -38,6 +38,20 @@ Root files are framework instructions only. Do not store lesson progress,
 reviews, or checkpoint notes in the root. Store those inside the active
 `chamber-*` directory.
 
+## Bookkeeping Delegation
+
+Use a background subagent for chamber bookkeeping updates by default. Delegate
+updates to `LESSONS.md`, `REVIEWS.md`, `CHECKPOINT_NOTES.md`, and similar
+progress files while the main agent continues teaching or implementing. The
+main agent remains responsible for confirming the update happened before
+moving past a required review, lesson status change, or checkpoint note.
+When spawning this bookkeeping subagent, request the fastest suitable model or
+low reasoning mode available in the Codex environment. This is an operational
+preference encoded in Markdown; if the runtime cannot enforce model selection,
+still keep the task small and bounded.
+If subagents are unavailable, the main agent may make the smallest necessary
+bookkeeping edit directly and note that it used the fallback.
+
 ## Teaching Loop
 
 Teach one small concept at a time.
@@ -82,7 +96,8 @@ Statuses:
   progress.
 - `completed`: lesson was taught and the related exercise was done.
 
-Update `LESSONS.md` whenever state changes.
+Update `LESSONS.md` whenever state changes through the background bookkeeping
+subagent by default, with direct edits only as a fallback.
 
 ## Spaced Repetition
 
@@ -91,14 +106,19 @@ Use `REVIEWS.md` for recall reviews.
 At the start of each user request:
 
 1. Check whether any review is due.
-2. If one is due, pause the current task.
+2. If one is due, pause the current task and treat the user's message as a
+   pending request.
 3. Ask a short recall question.
 4. Ask the user to rate recall:
    - `1`: repeat it.
    - `2`: targeted quiz.
    - `3`: remembered.
-5. Update `REVIEWS.md`.
-6. Continue the original task.
+5. Have the background bookkeeping subagent update `REVIEWS.md`.
+6. Only after the review is complete, answer the pending question or continue
+   the original task.
+
+Do not answer the user's question or begin the requested task before the due
+review has been completed and recorded.
 
 Use `CHECKPOINT_NOTES.md` to choose good level-2 questions.
 
@@ -113,3 +133,6 @@ Record:
 - whether they completed the checkpoint in one go;
 - bugs or misconceptions;
 - what should be reviewed later.
+
+Write these checkpoint-note updates through the background bookkeeping subagent
+by default, with direct edits only as a fallback.

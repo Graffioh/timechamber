@@ -2,6 +2,10 @@
 
 Use this file as the detailed learning log.
 
+Prefer having the background bookkeeping subagent update this file; edit
+directly only as a fallback when subagents are unavailable. Prefer the fastest
+suitable model or low reasoning mode for that subagent.
+
 For each checkpoint, record:
 
 - status;
@@ -18,4 +22,3 @@ Status: not started
 Notes:
 
 - TBD
-

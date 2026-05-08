@@ -32,6 +32,15 @@ schedule another review for 30 minutes later unless the user reaches level `3`.
 - Recall `3`: advance `Stage`; set `Next Due` using the next interval in the
   schedule.
 
+## Review Rule
+
+At the start of each chat request, check this file. If any review is due, pause
+the current task and treat the user's message as a pending request. Do not
+answer the user's question or begin the requested task until the review is
+complete and this file has been updated. Have the background bookkeeping
+subagent update this file, preferably with the fastest suitable model or low
+reasoning mode. After the review is recorded, return to the pending request.
+
 Stage progression:
 
 ```text
@@ -42,4 +51,3 @@ new -> 30m -> 1d -> 3d -> 7d -> 14d -> 30d -> 60d
 
 | Item | Topic | Source | Completed At | Last Review | Stage | Next Due | Last Recall | Weak Spots |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-

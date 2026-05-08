@@ -31,6 +31,14 @@ When the user is in the Timechamber root and wants to start a topic:
 
 Do not keep topic-specific progress files in the root.
 
+Use a background bookkeeping subagent by default for updates to chamber
+progress files such as `LESSONS.md`, `REVIEWS.md`, and
+`CHECKPOINT_NOTES.md`. Confirm required updates before continuing past a
+review, lesson status change, or checkpoint note. If subagents are unavailable,
+make the smallest necessary direct edit and note that fallback.
+When the Codex runtime supports model or reasoning overrides, spawn this
+bookkeeping subagent with the fastest suitable model or low reasoning mode.
+
 ## Universal Questions
 
 Use these for any subject:
@@ -102,3 +110,7 @@ Then initialize or update:
 - `CHECKPOINT_NOTES.md`.
 
 These files belong inside the `chamber-*` directory, not in the root.
+
+Use the background bookkeeping subagent for ongoing updates to the progress
+files after onboarding, with direct edits only as a fallback. Prefer the
+fastest suitable model or low reasoning mode for that subagent.
