@@ -1,0 +1,8 @@
+# Local learning chambers created from this framework.
+chamber-*/
+
+# Usual local/editor noise.
+.DS_Store
+*.swp
+*.swo
+
