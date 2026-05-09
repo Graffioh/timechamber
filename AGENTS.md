@@ -103,22 +103,24 @@ subagent by default, with direct edits only as a fallback.
 
 Use `REVIEWS.md` for recall reviews.
 
-At the start of each user request:
+Do not automatically check or trigger reviews at the start of every user
+request. Reviews are opt-in during normal conversation.
+
+When the user asks for a review, recall check, quiz, spaced repetition, or to
+continue reviews:
 
 1. Check whether any review is due.
-2. If one is due, pause the current task and treat the user's message as a
-   pending request.
-3. Ask a short recall question.
-4. Ask the user to rate recall:
+2. If one is due, ask a short recall question.
+3. Ask the user to rate recall:
    - `1`: repeat it.
    - `2`: targeted quiz.
    - `3`: remembered.
-5. Have the background bookkeeping subagent update `REVIEWS.md`.
-6. Only after the review is complete, answer the pending question or continue
-   the original task.
+4. Have the background bookkeeping subagent update `REVIEWS.md`.
+5. Return to the user's next requested learning task after the review is
+   complete.
 
-Do not answer the user's question or begin the requested task before the due
-review has been completed and recorded.
+If the user asks for a normal lesson, implementation task, explanation, or
+checkpoint, do not interrupt it with a due review.
 
 Use `CHECKPOINT_NOTES.md` to choose good level-2 questions.
 

@@ -34,12 +34,17 @@ schedule another review for 30 minutes later unless the user reaches level `3`.
 
 ## Review Rule
 
-At the start of each chat request, check this file. If any review is due, pause
-the current task and treat the user's message as a pending request. Do not
-answer the user's question or begin the requested task until the review is
-complete and this file has been updated. Have the background bookkeeping
-subagent update this file, preferably with the fastest suitable model or low
-reasoning mode. After the review is recorded, return to the pending request.
+Do not automatically check or trigger reviews at the start of every chat
+request. Reviews are opt-in during normal conversation.
+
+When the user asks for a review, recall check, quiz, spaced repetition, or to
+continue reviews, check this file for due cards. If any review is due, ask a
+short recall question, ask for recall level `1`, `2`, or `3`, then have the
+background bookkeeping subagent update this file, preferably with the fastest
+suitable model or low reasoning mode.
+
+If the user asks for a normal lesson, implementation task, explanation, or
+checkpoint, do not interrupt it with a due review.
 
 Stage progression:
 

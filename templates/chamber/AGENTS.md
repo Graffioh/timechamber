@@ -23,18 +23,21 @@ When spawning the bookkeeping subagent, request the fastest suitable model or
 low reasoning mode available in the Codex environment. If the runtime cannot
 enforce model selection, keep the delegated task small and bounded.
 
-At the start of each request:
+Do not automatically check or trigger reviews at the start of every request.
+Reviews are opt-in during normal conversation.
+
+When the user asks for a review, recall check, quiz, spaced repetition, or to
+continue reviews:
 
 1. Check `REVIEWS.md` for due reviews.
-2. If a review is due, pause and treat the user's message as a pending request.
-3. Ask a short recall question.
-4. Have the background bookkeeping subagent update `REVIEWS.md` and
+2. If a review is due, ask a short recall question.
+3. Have the background bookkeeping subagent update `REVIEWS.md` and
    `CHECKPOINT_NOTES.md` as needed.
-5. Only after the review is complete, answer the pending question or continue
-   the user's requested learning task.
+4. Return to the user's next requested learning task after the review is
+   complete.
 
-Do not answer the user's question or begin the requested task before the due
-review has been completed and recorded.
+If the user asks for a normal lesson, implementation task, explanation, or
+checkpoint, do not interrupt it with a due review.
 
 Teach one small concept at a time. When creating checkpoints, provide structure,
 README files, tests where possible, and verified building blocks from prior

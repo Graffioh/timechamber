@@ -19,9 +19,10 @@ TBD
   files only as a fallback when subagents are unavailable. Spawn that subagent
   with the fastest suitable model or low reasoning mode when the runtime
   supports it.
-- When a review is due, treat the triggering user message as a pending request.
-  Do not answer its question or begin its task until the review is complete and
-  recorded.
+- Reviews are opt-in during normal conversation. Check and run due reviews only
+  when the user asks for a review, recall check, quiz, spaced repetition, or to
+  continue reviews. Do not interrupt normal lessons, implementation tasks,
+  explanations, or checkpoints with due reviews.
 
 ## Lessons
 

@@ -33,7 +33,7 @@ Do not keep topic-specific progress files in the root.
 
 Use a background bookkeeping subagent by default for updates to chamber
 progress files such as `LESSONS.md`, `REVIEWS.md`, and
-`CHECKPOINT_NOTES.md`. Confirm required updates before continuing past a
+`CHECKPOINT_NOTES.md`. Confirm required updates before closing a requested
 review, lesson status change, or checkpoint note. If subagents are unavailable,
 make the smallest necessary direct edit and note that fallback.
 When the Codex runtime supports model or reasoning overrides, spawn this
