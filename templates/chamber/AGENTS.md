@@ -50,6 +50,11 @@ After defining it, add the usefulness bridge: what problem this concept solves,
 what would be weak or wrong without it, and how it supports the learner's
 larger goal.
 
+For lessons with math, use LaTeX formatting when it makes formulas easier to
+read, especially for sums, roots, fractions, vector/matrix notation, and
+indexed definitions. Always connect the notation back to plain language and a
+small concrete example when useful.
+
 When the user asks for a review, recall check, quiz, spaced repetition, or to
 continue reviews:
 

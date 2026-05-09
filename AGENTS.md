@@ -105,6 +105,10 @@ Use this shape by default:
 For technical topics, keep examples tiny and exact. Use real variable names,
 small numbers, and explicit shapes or units. Avoid vague metaphors once the
 learner needs precision; translate back into the formal model quickly.
+Use LaTeX formatting for mathematical formulas when it improves clarity,
+especially sums, roots, fractions, vector/matrix notation, and indexed
+definitions. Pair formulas with a plain-English reading and, when useful, a
+tiny numeric example.
 For terminology-heavy topics, explicitly separate "definition", "purpose",
 "operation", and "implementation" before moving to exercises.
 

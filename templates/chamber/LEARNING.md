@@ -23,6 +23,10 @@ TBD
   when useful, then the right rigor for the subject.
 - For math, code, and technical topics, make the rigorous pieces explicit:
   definitions, formulas, variable roles, invariants, edge cases, and tests.
+- Use LaTeX formatting for mathematical formulas when it improves clarity,
+  especially sums, roots, fractions, vector/matrix notation, and indexed
+  definitions. Pair formulas with plain-language readings and small numeric
+  examples when useful.
 - Use deep dives when the learner asks, when they seem stuck, or when a concept
   cannot be explained responsibly at the surface level.
 - Create checkpoints as practical exercises.
