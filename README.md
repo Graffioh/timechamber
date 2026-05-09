@@ -62,11 +62,13 @@ Inside that folder, the agent keeps:
 The intended loop is:
 
 1. Learn one small thing.
-2. Ask questions.
-3. Do a checkpoint exercise.
-4. Run a test if the topic supports it.
-5. Write down mistakes and weak spots.
-6. Review later.
+2. Hear it explained with a clear metaphor or example.
+3. Add the right rigor for the subject.
+4. Ask questions or request a deeper dive.
+5. Do a checkpoint exercise.
+6. Run a test if the topic supports it.
+7. Write down mistakes and weak spots.
+8. Review later.
 
 Keep it simple. The point is not to make a school system. The point is to stop
 losing context between sessions.

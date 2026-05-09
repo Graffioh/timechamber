@@ -40,4 +40,3 @@ TBD
 ## First Checkpoint
 
 TBD
-

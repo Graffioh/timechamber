@@ -26,6 +26,21 @@ enforce model selection, keep the delegated task small and bounded.
 Do not automatically check or trigger reviews at the start of every request.
 Reviews are opt-in during normal conversation.
 
+Teach with explanation clarity as the default priority. Start with plain
+language, easy metaphors, and small examples. Add rigor where the subject needs
+it: math, code, definitions, edge cases, constraints, and tests. When the user
+needs a deep dive, build it in layers so the intuition stays connected to the
+formal version.
+
+For each lesson, prefer this rhythm:
+
+1. Name the idea simply.
+2. Give one tiny example or metaphor.
+3. Map the example back to the real concept.
+4. Show the rigorous form where useful.
+5. Point out a common mistake.
+6. Stop for questions or offer a checkpoint.
+
 When the user asks for a review, recall check, quiz, spaced repetition, or to
 continue reviews:
 

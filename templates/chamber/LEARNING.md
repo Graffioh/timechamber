@@ -12,6 +12,12 @@ TBD
 
 - Teach one small concept at a time.
 - Keep examples minimal.
+- Teach with clear explanations: plain language first, examples and metaphors
+  when useful, then the right rigor for the subject.
+- For math, code, and technical topics, make the rigorous pieces explicit:
+  definitions, formulas, variable roles, invariants, edge cases, and tests.
+- Use deep dives when the learner asks, when they seem stuck, or when a concept
+  cannot be explained responsibly at the surface level.
 - Create checkpoints as practical exercises.
 - Use tests when the subject allows it.
 - Use a background bookkeeping subagent by default to update lesson status,

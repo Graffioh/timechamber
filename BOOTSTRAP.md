@@ -6,6 +6,11 @@ Use this file when the user starts a new Timechamber topic or when the active
 The goal is to ask enough to tailor the chamber without turning onboarding into
 a long form.
 
+Timechamber's default teaching style is explanation clarity: plain language,
+easy metaphors, small examples, and the right rigor where needed. During
+onboarding, capture how the learner likes explanations to balance intuition,
+practice, formality, and deep dives.
+
 ## Opening Prompt
 
 Ask:
@@ -48,6 +53,9 @@ Use these for any subject:
 - Do you want theory-first, practice-first, or a mix?
 - How much time do you want each session to take?
 - Do you want checkpoint exercises, quizzes, projects, or all three?
+- Do you like metaphors and intuition first, direct rigor first, or a mix?
+- When should the agent go deep: only on request, when you seem stuck, or by
+  default for important concepts?
 - Do you prefer strict correction or gentle hints first?
 - Is there anything you do not want to spend time on?
 
@@ -80,7 +88,7 @@ Use these for writing, design, music, art, or similar:
 - What style or reference point are you aiming for?
 - Do you want critique, imitation exercises, or original projects?
 - Should the agent prioritize taste, technique, speed, or consistency?
-- What kind of artifact should each checkpoint produce?
+- What should a finished checkpoint or exercise produce?
 
 ## After Onboarding
 
