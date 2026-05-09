@@ -1,6 +1,11 @@
 # Checkpoint Notes
 
-Use this file as the detailed learning log.
+Use this file only as the detailed log for active checkpoint work.
+
+Record checkpoint-specific help requests, bugs, mistakes, completion notes, and
+review material. Do not update this file for ordinary lessons, lesson
+corrections, skipped checkpoints, framework guidance changes, or
+non-checkpoint questions.
 
 Prefer having the background bookkeeping subagent update this file; edit
 directly only as a fallback when subagents are unavailable. Prefer the fastest

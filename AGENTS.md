@@ -42,8 +42,8 @@ is still incomplete:
 2. Ask a few introductory questions.
 3. Prefer concise questions, but allow free-form answers.
 4. After the user answers, create `CHAMBER.md`.
-5. Tailor `LEARNING.md`, `LESSONS.md`, `REVIEWS.md`, and
-   `CHECKPOINT_NOTES.md` to the chosen subject.
+5. Tailor `LEARNING.md`, `LESSONS.md`, `SUB_LESSONS.md`, `REVIEWS.md`,
+   `LEARNING_NOTES.md`, and `CHECKPOINT_NOTES.md` to the chosen subject.
 
 Do not assume the subject is programming. If it is programming, ask programming
 specific questions such as language, project type, runtime, tooling, and
@@ -56,10 +56,12 @@ reviews, or checkpoint notes in the root. Store those inside the active
 ## Bookkeeping Delegation
 
 Use a background subagent for chamber bookkeeping updates by default. Delegate
-updates to `LESSONS.md`, `REVIEWS.md`, `CHECKPOINT_NOTES.md`, and similar
-progress files while the main agent continues teaching or implementing. The
-main agent remains responsible for confirming the update happened before
-moving past a required review, lesson status change, or checkpoint note.
+updates to `LESSONS.md`, `SUB_LESSONS.md`, `REVIEWS.md`, `LEARNING_NOTES.md`,
+active-checkpoint `CHECKPOINT_NOTES.md`, and similar progress files while the
+main agent continues teaching or implementing. The main agent remains
+responsible for confirming the update happened before moving past a required
+review, lesson status change, sublesson branch, learning note, or checkpoint
+note.
 When spawning this bookkeeping subagent, request the fastest suitable model or
 low reasoning mode available in the Codex environment. This is an operational
 preference encoded in Markdown; if the runtime cannot enforce model selection,
@@ -80,11 +82,16 @@ For each lesson:
 5. Show one minimal example if useful.
 6. Add precise math, code, vocabulary, or edge cases once the intuition is in
    place.
-7. Stop for questions.
-8. When the user is ready, create an exercise or checkpoint.
-9. Mark the lesson as `doing exercise`.
-10. When the exercise is complete, mark the lesson as `completed`.
-11. Add a review card.
+7. Identify concepts mentioned but not deeply explained, offer them as optional
+   sublesson branches, and record them in `SUB_LESSONS.md`.
+8. Stop for questions.
+9. When the user is ready, create an exercise/checkpoint only if it is
+   meaningful enough to justify standalone practice.
+10. If the concept is small or mechanical, mark it `completed` and fold it into
+   the next larger checkpoint as an explicit TODO or requirement.
+11. Mark the lesson as `doing exercise` when a standalone exercise starts.
+12. When the exercise is complete, mark the lesson as `completed`.
+13. Add a review card.
 
 ## Explanation Style
 
@@ -100,7 +107,10 @@ Use this shape by default:
 5. Map the metaphor back to the real concept.
 6. Show the rigorous form: formula, code, definition, or rule.
 7. Call out the common mistake or boundary.
-8. Ask a small question or offer a checkpoint when appropriate.
+8. Offer clear next-step choices: branch into a sublesson, continue the main
+   path, save branches for later, or start a meaningful checkpoint. Do not add
+   a default quiz/check question unless the learner asks for one, a review is
+   active, or the lesson is explicitly in exercise mode.
 
 For technical topics, keep examples tiny and exact. Use real variable names,
 small numbers, and explicit shapes or units. Avoid vague metaphors once the
@@ -112,6 +122,12 @@ tiny numeric example.
 For terminology-heavy topics, explicitly separate "definition", "purpose",
 "operation", and "implementation" before moving to exercises.
 
+Do not attribute answers, understanding, readiness, confusion, or completion to
+the learner unless the conversation or repository state proves it. Avoid
+phrases like "you answered this", "you already understand", or "you completed
+this" unless the learner actually did. When continuing a lesson, name the next
+concept directly instead of inventing continuity.
+
 For deep dives, build layers: definition first, purpose second, intuition
 third, mechanics fourth, edge cases fifth, implementation details sixth. The
 learner should always know which layer they are looking at.
@@ -119,6 +135,13 @@ learner should always know which layer they are looking at.
 ## Checkpoints
 
 Checkpoint folders are snapshots of learning milestones.
+
+Checkpoints should be meaningful integration points, not automatic paperwork
+after every lesson. If a concept is straightforward enough that a standalone
+checkpoint would mostly be busywork, skip the standalone checkpoint, record the
+decision in `LESSONS.md`, and include the concept as a TODO or requirement in
+the next larger checkpoint. Do not update `CHECKPOINT_NOTES.md` for skipped
+checkpoints.
 
 For checkpoint folders, provide:
 
@@ -172,19 +195,52 @@ continue reviews:
 If the user asks for a normal lesson, implementation task, explanation, or
 checkpoint, do not interrupt it with a due review.
 
-Use `CHECKPOINT_NOTES.md` to choose good level-2 questions.
+Use existing `CHECKPOINT_NOTES.md` to choose good level-2 questions only when
+the weak spot came from prior checkpoint work.
 
-## Checkpoint Notes
+## Learning Notes
 
-Use `CHECKPOINT_NOTES.md` for detailed learning history.
+Use `LEARNING_NOTES.md` for chamber-level teaching observations that are not
+checkpoint-specific.
 
 Record:
 
-- what the user asked about;
-- what they got wrong;
+- lesson-structure improvements;
+- recurring explanation mistakes to avoid;
+- user preferences about pacing, rigor, examples, or checkpoints;
+- general teaching corrections that should shape future lessons.
+
+Do not use `LEARNING_NOTES.md` for lesson status, spaced repetition scheduling,
+or active checkpoint debugging.
+
+## Sublessons
+
+Use `SUB_LESSONS.md` for optional branches from completed or in-progress
+lessons.
+
+At the end of each lesson, identify concepts that were mentioned but not deeply
+explained. Ask whether the learner wants to branch into one, continue the main
+curriculum, or save them for later. Record each branch with its parent lesson,
+status, and why it matters.
+
+Do not put sublesson branches in `CHECKPOINT_NOTES.md`.
+
+## Checkpoint Notes
+
+Use `CHECKPOINT_NOTES.md` only for detailed active checkpoint history.
+
+Record:
+
+- what the user asked about while working on a checkpoint;
+- what they got wrong during the checkpoint;
 - whether they completed the checkpoint in one go;
-- bugs or misconceptions;
+- checkpoint bugs or misconceptions;
 - what should be reviewed later.
+
+Do not update `CHECKPOINT_NOTES.md` for ordinary lessons, lesson corrections,
+framework guidance changes, skipped checkpoints, or non-checkpoint questions.
+Use `LESSONS.md` for lesson state and skipped/folded checkpoint decisions, and
+`REVIEWS.md` for review state.
 
 Write these checkpoint-note updates through the background bookkeeping subagent
 by default, with direct edits only as a fallback.

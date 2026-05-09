@@ -27,15 +27,33 @@ TBD
   especially sums, roots, fractions, vector/matrix notation, and indexed
   definitions. Pair formulas with plain-language readings and small numeric
   examples when useful.
+- Do not attribute answers, understanding, readiness, confusion, or completion
+  to the learner unless the conversation or repository state proves it. Continue
+  lessons by naming the next concept directly.
 - Use deep dives when the learner asks, when they seem stuck, or when a concept
   cannot be explained responsibly at the surface level.
+- At the end of each lesson, identify concepts that were mentioned but not
+  deeply explained. Offer them as optional sublesson branches and record them
+  in `SUB_LESSONS.md`.
+- Do not end normal lessons with a default quiz/check question. Use checks only
+  when the learner asks for one, a spaced-repetition review is active, or the
+  lesson has explicitly entered exercise/checkpoint mode.
 - Create checkpoints as practical exercises.
+- Prefer checkpoints at meaningful integration points. If a concept is too
+  small or mechanical for standalone practice, mark the lesson complete and
+  fold it into the next larger checkpoint as an explicit TODO or requirement.
 - Use tests when the subject allows it.
 - Use a background bookkeeping subagent by default to update lesson status,
-  reviews, checkpoint notes, and similar progress files. Directly edit those
-  files only as a fallback when subagents are unavailable. Spawn that subagent
-  with the fastest suitable model or low reasoning mode when the runtime
-  supports it.
+  sublesson branches, reviews, learning notes, active-checkpoint notes, and
+  similar progress files. Directly edit those files only as a fallback when
+  subagents are unavailable. Spawn that subagent with the fastest suitable
+  model or low reasoning mode when the runtime supports it.
+- Use `LEARNING_NOTES.md` for general teaching/process corrections and learner
+  preferences that are not tied to active checkpoint work.
+- Update `CHECKPOINT_NOTES.md` only during active checkpoint work: help
+  requests, bugs, mistakes, completion notes, and checkpoint-specific review
+  material. Do not update it for ordinary lessons, lesson corrections,
+  framework guidance changes, skipped checkpoints, or non-checkpoint questions.
 - Reviews are opt-in during normal conversation. Check and run due reviews only
   when the user asks for a review, recall check, quiz, spaced repetition, or to
   continue reviews. Do not interrupt normal lessons, implementation tasks,
