@@ -12,6 +12,13 @@ TBD
 
 - Teach one small concept at a time.
 - Keep examples minimal.
+- Define new vocabulary and core objects before showing the procedure that
+  uses them.
+- Separate "what the thing is" from "what we do with it" and "how it is
+  implemented."
+- Explain why each new core concept is useful before going into mechanics:
+  what problem it solves, what the naive alternative would be, and why that
+  alternative is weak or incomplete.
 - Teach with clear explanations: plain language first, examples and metaphors
   when useful, then the right rigor for the subject.
 - For math, code, and technical topics, make the rigorous pieces explicit:

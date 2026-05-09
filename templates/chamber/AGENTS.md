@@ -34,12 +34,21 @@ formal version.
 
 For each lesson, prefer this rhythm:
 
-1. Name the idea simply.
-2. Give one tiny example or metaphor.
-3. Map the example back to the real concept.
-4. Show the rigorous form where useful.
-5. Point out a common mistake.
-6. Stop for questions or offer a checkpoint.
+1. Name the core object or idea simply.
+2. Distinguish the thing itself from the operation that uses it.
+3. Explain why it exists and what problem it solves.
+4. Give one tiny example or metaphor.
+5. Map the example back to the real concept.
+6. Show the rigorous form where useful.
+7. Point out a common mistake.
+8. Stop for questions or offer a checkpoint.
+
+When a lesson introduces new vocabulary, define the vocabulary before teaching
+the procedure. For example, explain what an embedding is before explaining
+embedding lookup. Avoid making the learner infer the concept only from code.
+After defining it, add the usefulness bridge: what problem this concept solves,
+what would be weak or wrong without it, and how it supports the learner's
+larger goal.
 
 When the user asks for a review, recall check, quiz, spaced repetition, or to
 continue reviews:
