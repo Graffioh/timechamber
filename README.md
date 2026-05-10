@@ -11,52 +11,25 @@ Example:
 ```text
 chamber-c-inference-engine/
 chamber-linear-algebra/
-chamber-writing-essays/
+chamber-build-a-nuclear-reactor/
 ```
 
 Each chamber keeps its own curriculum, lessons, exercises, notes, references,
 and review cards. Chamber folders are ignored by git so the framework can stay
 clean and reusable.
 
-## How To Use
+## What Is A Chamber?
 
-1. Open this repo with your coding agent.
-2. Start from the Timechamber root.
-3. Ask to start a new chamber, or say what you want to learn.
-4. Answer the short onboarding questions.
-5. Let the agent create a `chamber-*` folder from the templates.
-6. Continue future sessions from inside that chamber folder.
+A chamber is a folder for one learning topic, highly customizable by you based on your needs, just by talking to your agent.
 
-Example:
+It starts with a short learning contract: what you want to learn, where you are
+starting from, how you like to practice, and what a useful checkpoint should
+look like.
 
-```text
-I want to start a Timechamber for learning linear algebra.
-```
-
-Once a chamber exists, you can ask for the next lesson, a checkpoint exercise,
-a review, a deeper explanation, or an optional side branch.
-
-## Learning Loop
-
-The normal loop is:
-
-1. Learn one small concept at a time.
-2. Start with the idea itself, then the procedure that uses it.
-3. Understand why the concept matters before jumping into mechanics.
-4. Ground it with a tiny example, metaphor, formula, or code snippet.
-5. Pause for questions, corrections, or a deeper branch.
-6. Practice with a checkpoint when the concept is worth standalone work.
-7. Record useful mistakes, weak spots, and follow-up topics.
-8. Review important ideas later with short recall checks.
-
-Small mechanical concepts can be folded into a later combined checkpoint
-instead of becoming busywork.
-
-## What It Tracks
-
-Timechamber gives the agent a simple place to remember:
+After that, the chamber becomes the home for everything about that topic:
 
 - what you want to learn;
+- the curriculum and learning style;
 - the current lesson and checkpoint;
 - optional side topics that came up;
 - exercises you are working on;
@@ -67,15 +40,39 @@ Timechamber gives the agent a simple place to remember:
 It is not meant to become a heavy school system. The point is a calm learning
 loop with enough memory to keep moving.
 
-## Starting A Chamber
+## How To Use
 
-A chamber starts with a topic and a short learning contract: what you want to
-learn, where you are starting from, how you like to practice, and what a useful
-checkpoint should look like.
+1. Open this repo with your agent.
+2. Start from the Timechamber root.
+3. Ask to start a new chamber, or say what you want to learn.
+4. Answer the short onboarding questions.
+5. Let the agent create a `chamber-*` folder from the templates.
+6. Continue future sessions from inside that chamber folder.
 
-The agent uses that conversation to create a `chamber-*` folder from the
-templates. After that, the chamber becomes the home for the curriculum, lesson
-status, exercises, notes, references, and reviews for that topic.
+Example:
+
+```text
+I want to start learning linear algebra.
+```
+
+Once a chamber exists, you can ask for the next lesson, a checkpoint exercise,
+a review, a deeper explanation, or an optional side branch.
+
+## How Learning Works
+
+Timechamber favors small lessons with clear explanations.
+
+Each lesson should introduce one idea, explain why it matters, and connect it
+to a tiny example before moving into formulas, code, definitions, or edge
+cases. If a side topic appears, it can become an optional branch instead of
+derailing the main path.
+
+Practice happens through checkpoints when the work is meaningful enough to
+stand on its own. Smaller mechanical ideas can be carried into a later combined
+checkpoint instead of becoming busywork.
+
+Reviews are short recall checks that help important ideas stay warm across
+sessions.
 
 ## Root Files
 
