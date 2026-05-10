@@ -36,6 +36,22 @@ I want to start a Timechamber for learning linear algebra.
 Once a chamber exists, you can ask for the next lesson, a checkpoint exercise,
 a review, a deeper explanation, or an optional side branch.
 
+## Learning Loop
+
+The normal loop is:
+
+1. Learn one small concept at a time.
+2. Start with the idea itself, then the procedure that uses it.
+3. Understand why the concept matters before jumping into mechanics.
+4. Ground it with a tiny example, metaphor, formula, or code snippet.
+5. Pause for questions, corrections, or a deeper branch.
+6. Practice with a checkpoint when the concept is worth standalone work.
+7. Record useful mistakes, weak spots, and follow-up topics.
+8. Review important ideas later with short recall checks.
+
+Small mechanical concepts can be folded into a later combined checkpoint
+instead of becoming busywork.
+
 ## What It Tracks
 
 Timechamber gives the agent a simple place to remember:
@@ -51,25 +67,15 @@ Timechamber gives the agent a simple place to remember:
 It is not meant to become a heavy school system. The point is a calm learning
 loop with enough memory to keep moving.
 
-## How It Starts
+## Starting A Chamber
 
-From the repo root, the agent should first ask:
+A chamber starts with a topic and a short learning contract: what you want to
+learn, where you are starting from, how you like to practice, and what a useful
+checkpoint should look like.
 
-```text
-What do you want to learn in this Timechamber?
-```
-
-After a short onboarding conversation, it creates a directory like:
-
-```text
-chamber-<topic-name>/
-```
-
-Then it copies and adapts the chamber template files, fills in the learning
-contract, and continues inside that chamber.
-
-If you are already inside a `chamber-*` folder, the agent should use that
-chamber's files instead of storing progress in the root.
+The agent uses that conversation to create a `chamber-*` folder from the
+templates. After that, the chamber becomes the home for the curriculum, lesson
+status, exercises, notes, references, and reviews for that topic.
 
 ## Root Files
 
@@ -101,23 +107,6 @@ A chamber usually contains:
 Checkpoint folders are snapshots. They should contain the prompt, constraints,
 compile/run instructions, tests when useful, and any verified building blocks
 from earlier checkpoints.
-
-## Learning Loop
-
-The normal loop is:
-
-1. Learn one small concept.
-2. Define the core object before teaching the operation around it.
-3. Explain why the concept exists and what problem it solves.
-4. Use a tiny example, metaphor, formula, or code snippet as needed.
-5. Name optional side topics and record them in `SUB_LESSONS.md`.
-6. Ask questions or take a deeper branch.
-7. Start a checkpoint only when it is worth standalone practice.
-8. Record checkpoint issues in `CHECKPOINT_NOTES.md`.
-9. Add or update review cards in `REVIEWS.md`.
-
-Small mechanical concepts can be folded into a later combined checkpoint
-instead of becoming busywork.
 
 ## Reviews
 
