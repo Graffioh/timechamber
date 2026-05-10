@@ -11,6 +11,10 @@ easy metaphors, small examples, and the right rigor where needed. During
 onboarding, capture how the learner likes explanations to balance intuition,
 practice, formality, and deep dives.
 
+Default lessons should stay inside the learner's current vocabulary. Future
+concepts may be named as brief signposts, but should not be used as comparisons
+or explanatory anchors before they have been taught.
+
 ## Opening Prompt
 
 Ask:
@@ -33,6 +37,8 @@ When the user is in the Timechamber root and wants to start a topic:
 4. Copy/adapt `templates/chamber/` into that directory.
 5. Continue onboarding inside the new chamber.
 6. Fill `CHAMBER.md`, `LEARNING.md`, and `LESSONS.md`.
+7. Initialize `REFERENCES.md` with high-quality starter sources for the
+   subject.
 
 Do not keep topic-specific progress files in the root.
 
@@ -43,6 +49,18 @@ review, lesson status change, or checkpoint note. If subagents are unavailable,
 make the smallest necessary direct edit and note that fallback.
 When the Codex runtime supports model or reasoning overrides, spawn this
 bookkeeping subagent with the fastest suitable model or low reasoning mode.
+
+Use `REFERENCES.md` for the chamber's source base. During onboarding, seed it
+with strong references for the chosen subject and likely first lessons when the
+subject has obvious canonical sources, and leave clear topic sections for
+future additions. When facts are current, specialized, or uncertain, search the
+web and prefer primary or widely respected sources over memory.
+
+Treat the initial `REFERENCES.md` as a starting ranking, not a permanent list.
+As lessons and conversation reveal better sources, update the file: add useful
+references, replace weaker ones, and keep short notes about what each source is
+best for. Ask for learner feedback occasionally so future chambers can rank
+similar references more usefully.
 
 ## Universal Questions
 
@@ -115,6 +133,7 @@ Then initialize or update:
 - `LEARNING.md`;
 - `LESSONS.md`;
 - `REVIEWS.md`;
+- `REFERENCES.md`;
 - `CHECKPOINT_NOTES.md`.
 
 These files belong inside the `chamber-*` directory, not in the root.

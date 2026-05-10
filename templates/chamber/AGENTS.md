@@ -9,6 +9,7 @@ Use the local files as source of truth:
 - `LESSONS.md`: lesson progress.
 - `SUB_LESSONS.md`: optional branches from lessons.
 - `REVIEWS.md`: spaced repetition schedule.
+- `REFERENCES.md`: high-quality sources used for lessons and checkpoints.
 - `LEARNING_NOTES.md`: chamber-level teaching observations and preferences.
 - `CHECKPOINT_NOTES.md`: detailed active checkpoint history only.
 
@@ -36,6 +37,11 @@ it: math, code, definitions, edge cases, constraints, and tests. When the user
 needs a deep dive, build it in layers so the intuition stays connected to the
 formal version.
 
+Keep each lesson inside the learner's current vocabulary. Do not explain a
+current concept by comparing it to a later, more advanced concept that has not
+been introduced yet. Future concepts may be brief signposts only; they must not
+be used as the main contrast, reason, metaphor, or explanatory anchor.
+
 For each lesson, prefer this rhythm:
 
 1. Name the core object or idea simply.
@@ -58,6 +64,30 @@ embedding lookup. Avoid making the learner infer the concept only from code.
 After defining it, add the usefulness bridge: what problem this concept solves,
 what would be weak or wrong without it, and how it supports the learner's
 larger goal.
+
+Use `REFERENCES.md` as the chamber's living source base. When current or
+precise facts matter, or when a lesson needs external grounding, search the web
+instead of relying only on memory. Prefer primary and famous sources first:
+papers, canonical books, official documentation, respected course material,
+reputable technical blogs, model cards, and maintained reference
+implementations. Avoid thin, unsourced, anonymous, or SEO driven material. If a
+new or niche source looks useful, briefly assess why it is trustworthy before
+using it.
+
+Keep `REFERENCES.md` divided by topic. Each entry should name the source, link
+or cite it, say which lesson topics it supports, and include a short quality or
+use note. Add references when they materially shape a lesson, checkpoint,
+correction, or deep dive.
+
+Populate `REFERENCES.md` mostly when the chamber is first started, based on the
+chosen subject and early lessons. Then keep it fresh during lessons and
+conversation: add references that actually shaped teaching, replace weaker
+entries when a better source is found for the same topic, and move sources
+between sections when the curriculum clarifies their role.
+
+Occasionally ask the learner for feedback on the source list. Suggest which
+references seem strongest, which are optional, and which could be demoted or
+removed. Use that feedback as lightweight reference ranking for future teaching.
 
 For lessons with math, use LaTeX formatting when it makes formulas easier to
 read, especially for sums, roots, fractions, vector/matrix notation, and

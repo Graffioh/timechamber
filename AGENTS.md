@@ -20,6 +20,11 @@ answer: what problem does this solve, what would the naive alternative be, why
 is that alternative weak or wrong, and how does this concept help the learner's
 larger goal? This bridge should come before implementation details.
 
+Keep each lesson inside the learner's current vocabulary. Do not explain a
+current concept by comparing it to a later, more advanced concept that has not
+been introduced yet. Future concepts may be brief signposts only; they must not
+be used as the main contrast, reason, metaphor, or explanatory anchor.
+
 ## First-Run Behavior
 
 At the start of a new Timechamber, check whether the user is inside a
@@ -43,7 +48,8 @@ is still incomplete:
 3. Prefer concise questions, but allow free-form answers.
 4. After the user answers, create `CHAMBER.md`.
 5. Tailor `LEARNING.md`, `LESSONS.md`, `SUB_LESSONS.md`, `REVIEWS.md`,
-   `LEARNING_NOTES.md`, and `CHECKPOINT_NOTES.md` to the chosen subject.
+   `LEARNING_NOTES.md`, `CHECKPOINT_NOTES.md`, and `REFERENCES.md` to the
+   chosen subject.
 
 Do not assume the subject is programming. If it is programming, ask programming
 specific questions such as language, project type, runtime, tooling, and
@@ -52,6 +58,44 @@ preferred exercise style.
 Root files are framework instructions only. Do not store lesson progress,
 reviews, or checkpoint notes in the root. Store those inside the active
 `chamber-*` directory.
+
+## References
+
+Use `REFERENCES.md` inside each chamber for sources used to teach the subject:
+papers, books, official documentation, high-quality blogs, lectures, model
+cards, and implementation repositories. Treat it as a living source map, not a
+static bibliography.
+
+When current or precise facts matter, or when a lesson would benefit from
+external grounding, search the web instead of relying only on model memory.
+Prefer primary and widely respected sources first: official papers, official
+docs, canonical textbooks, established course material, reputable engineering
+writeups, and maintained reference implementations.
+
+Do not pad lessons with weak links. Avoid low-quality, thin, anonymous, SEO
+driven, or unsourced posts. If a useful source is new, niche, or not already a
+well-known reference, briefly assess its quality before relying on it: who
+wrote it, whether claims are cited or reproducible, whether examples are
+technically sound, whether the project is maintained, and whether better-known
+sources agree with it.
+
+Keep `REFERENCES.md` organized by section or topic. For each reference, include
+the title, author or organization when known, link or citation, the topics it
+supports, and a short quality/use note. Add sources when they materially shape
+a lesson, checkpoint, correction, or deep dive.
+
+Populate `REFERENCES.md` mostly at chamber startup, based on the chosen topic
+and early curriculum. After that, update it opportunistically from lessons and
+conversation: add sources that actually informed the teaching, move sources to
+better topic sections, and replace weaker entries when a better reference is
+found for the same role. When replacing a source, prefer a concise note such as
+"replaced by ..." or remove the old source if it no longer adds value.
+
+From time to time, especially after several lessons or after adding unfamiliar
+sources, ask the learner whether the references are helpful. Suggest which
+sources seem strongest, which are optional, and which might be demoted or
+removed. Use this feedback to improve future reference ranking inside the
+chamber.
 
 ## Bookkeeping Delegation
 
@@ -87,11 +131,17 @@ For each lesson:
 8. Stop for questions.
 9. When the user is ready, create an exercise/checkpoint only if it is
    meaningful enough to justify standalone practice.
-10. If the concept is small or mechanical, mark it `completed` and fold it into
-   the next larger checkpoint as an explicit TODO or requirement.
-11. Mark the lesson as `doing exercise` when a standalone exercise starts.
-12. When the exercise is complete, mark the lesson as `completed`.
-13. Add a review card.
+10. If the concept is small or mechanical, explain that the checkpoint should be
+   skipped or folded into the next larger checkpoint, but do not mark the
+   lesson `completed` yet.
+11. Mark the lesson as `completed` only after the user explicitly says to go on
+   with the next phase: usually starting the checkpoint, or moving to the next
+   lesson when the checkpoint is skipped as too small and incorporated into a
+   larger future checkpoint.
+12. Mark the lesson as `doing exercise` when a standalone exercise starts.
+13. When the exercise is complete and the user is ready to move on, mark the
+   lesson as `completed`.
+14. Add a review card.
 
 ## Explanation Style
 
@@ -138,10 +188,12 @@ Checkpoint folders are snapshots of learning milestones.
 
 Checkpoints should be meaningful integration points, not automatic paperwork
 after every lesson. If a concept is straightforward enough that a standalone
-checkpoint would mostly be busywork, skip the standalone checkpoint, record the
-decision in `LESSONS.md`, and include the concept as a TODO or requirement in
-the next larger checkpoint. Do not update `CHECKPOINT_NOTES.md` for skipped
-checkpoints.
+checkpoint would mostly be busywork, explain that the checkpoint should be
+skipped or folded forward, but wait for the user to explicitly say to go on with
+the next phase before marking the lesson `completed`. After that confirmation,
+record the decision in `LESSONS.md`, and include the concept as a TODO or
+requirement in the next larger checkpoint. Do not update `CHECKPOINT_NOTES.md`
+for skipped checkpoints.
 
 For checkpoint folders, provide:
 
@@ -170,7 +222,11 @@ Statuses:
 - `completed`: lesson was taught and the related exercise was done.
 
 Update `LESSONS.md` whenever state changes through the background bookkeeping
-subagent by default, with direct edits only as a fallback.
+subagent by default, with direct edits only as a fallback. Never mark a lesson
+`completed` until the user explicitly says to go on with the next phase. The
+next phase is usually a checkpoint, or the next lesson when the checkpoint is
+skipped because it is too small and will be incorporated into a larger future
+checkpoint.
 
 ## Spaced Repetition
 

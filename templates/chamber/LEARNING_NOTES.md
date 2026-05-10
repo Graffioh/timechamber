@@ -15,4 +15,5 @@ checkpoint debugging.
 
 ## Notes
 
-TBD
+- Keep lessons inside the learner's current vocabulary. Do not explain a
+  current concept by contrasting it with an untaught future concept.

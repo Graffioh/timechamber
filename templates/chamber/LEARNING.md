@@ -14,6 +14,9 @@ TBD
 - Keep examples minimal.
 - Define new vocabulary and core objects before showing the procedure that
   uses them.
+- Keep explanations inside the learner's current vocabulary. Do not use
+  untaught future concepts as comparisons, contrasts, metaphors, or explanatory
+  anchors.
 - Separate "what the thing is" from "what we do with it" and "how it is
   implemented."
 - Explain why each new core concept is useful before going into mechanics:
@@ -32,6 +35,14 @@ TBD
   lessons by naming the next concept directly.
 - Use deep dives when the learner asks, when they seem stuck, or when a concept
   cannot be explained responsibly at the surface level.
+- Use `REFERENCES.md` for high-quality sources. Search the web when current,
+  precise, or specialized facts matter instead of relying only on memory.
+  Prefer primary papers, canonical books, official documentation, respected
+  courses, reputable technical blogs, model cards, and maintained reference
+  implementations. Briefly assess any new or niche source before relying on it.
+  Populate it mostly at chamber startup, then update it from lessons and
+  conversation. Replace weaker references when better ones are found, and ask
+  for learner feedback occasionally to improve reference ranking.
 - At the end of each lesson, identify concepts that were mentioned but not
   deeply explained. Offer them as optional sublesson branches and record them
   in `SUB_LESSONS.md`.
