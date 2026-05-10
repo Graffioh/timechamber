@@ -18,6 +18,24 @@ Each chamber keeps its own curriculum, lessons, exercises, notes, references,
 and review cards. Chamber folders are ignored by git so the framework can stay
 clean and reusable.
 
+## How To Use
+
+1. Open this repo with your coding agent.
+2. Start from the Timechamber root.
+3. Ask to start a new chamber, or say what you want to learn.
+4. Answer the short onboarding questions.
+5. Let the agent create a `chamber-*` folder from the templates.
+6. Continue future sessions from inside that chamber folder.
+
+Example:
+
+```text
+I want to start a Timechamber for learning linear algebra.
+```
+
+Once a chamber exists, you can ask for the next lesson, a checkpoint exercise,
+a review, a deeper explanation, or an optional side branch.
+
 ## What It Tracks
 
 Timechamber gives the agent a simple place to remember:
