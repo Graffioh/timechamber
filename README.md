@@ -3,6 +3,8 @@
 Timechamber is a small framework for learning with an agent without losing
 context between sessions.
 
+<img width="652" height="522" alt="image" src="https://github.com/user-attachments/assets/5200744a-a000-49c0-8b2e-998cb89ed18c" />
+
 The root of this repo is the reusable framework. Actual learning happens in
 folders named `chamber-*`.
 
