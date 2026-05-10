@@ -53,6 +53,9 @@ TBD
 - Prefer checkpoints at meaningful integration points. If a concept is too
   small or mechanical for standalone practice, mark the lesson complete and
   fold it into the next larger checkpoint as an explicit TODO or requirement.
+- Keep the checkpoint status table below current. If any checkpoint is marked
+  `to do now`, it must be started or continued before advancing to later lessons
+  unless the learner explicitly asks to defer, fold, or skip it.
 - Use tests when the subject allows it.
 - Use a background bookkeeping subagent by default to update lesson status,
   sublesson branches, reviews, learning notes, active-checkpoint notes, and
@@ -76,4 +79,16 @@ TBD
 
 ## Checkpoints
 
-TBD
+Statuses:
+
+- `not planned`: possible checkpoint, not yet committed to the curriculum.
+- `planned`: checkpoint belongs to the curriculum but is not next.
+- `to do now`: next checkpoint to create or work on.
+- `active`: checkpoint has been scaffolded or started.
+- `completed`: checkpoint was completed and verified as appropriate.
+- `folded`: intentionally merged into a later checkpoint.
+- `skipped`: intentionally skipped with the user's explicit confirmation.
+
+| Checkpoint | Topic | Status | Depends On | Notes |
+| --- | --- | --- | --- | --- |
+| TBD | TBD | planned | TBD | TBD |

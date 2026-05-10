@@ -123,6 +123,15 @@ checkpoint was skipped or folded forward in `LESSONS.md`, and include it as an
 explicit TODO in the next meaningful combined checkpoint. Do not update
 `CHECKPOINT_NOTES.md` for skipped checkpoints or normal lessons.
 
+Keep the checkpoint status table in `LEARNING.md` current. Statuses are
+`not planned`, `planned`, `to do now`, `active`, `completed`, `folded`, and
+`skipped`. When a checkpoint is marked `to do now`, it is the next required
+learning action; do not move to later lessons or checkpoint tracks unless the
+learner explicitly asks to defer, fold, or skip it. If the learner says
+"continue", "go on", or similar while a checkpoint is `to do now`, start or
+continue that checkpoint. Any folded or skipped checkpoint must keep a visible
+status and reason instead of disappearing from the flow.
+
 Use `LEARNING_NOTES.md` for general teaching/process corrections and learner
 preferences that are not tied to active checkpoint work.
 

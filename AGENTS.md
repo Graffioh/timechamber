@@ -195,6 +195,28 @@ record the decision in `LESSONS.md`, and include the concept as a TODO or
 requirement in the next larger checkpoint. Do not update `CHECKPOINT_NOTES.md`
 for skipped checkpoints.
 
+Every chamber must keep an explicit checkpoint status table in `LEARNING.md`.
+Use these checkpoint statuses:
+
+- `not planned`: possible checkpoint, not yet committed to the curriculum.
+- `planned`: checkpoint belongs to the curriculum but is not next.
+- `to do now`: this is the next checkpoint that must be created or worked
+  before advancing to later lessons that depend on it.
+- `active`: checkpoint has been scaffolded or started.
+- `completed`: checkpoint was completed and verified as appropriate.
+- `folded`: intentionally merged into a later checkpoint.
+- `skipped`: intentionally skipped with the user's explicit confirmation.
+
+When a checkpoint is marked `to do now`, do not skip ahead to later lessons or
+checkpoint tracks unless the user explicitly asks to defer, fold, or skip that
+checkpoint. If the learner says "continue", "go on", or similar while a
+checkpoint is `to do now`, start or continue that checkpoint instead of moving
+past it.
+
+When folding or skipping a checkpoint, update the checkpoint status table and
+record the reason in `LESSONS.md`. A checkpoint listed in the curriculum should
+never silently disappear just because the lesson flow feels natural.
+
 For checkpoint folders, provide:
 
 - folder structure;
